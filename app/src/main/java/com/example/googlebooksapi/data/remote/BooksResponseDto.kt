@@ -1,6 +1,7 @@
 package com.example.googlebooksapi.data.remote
 
 data class BooksResponseDto(
+    val totalItems: Int,
     val items: List<BookItemDto>
 ) {
     data class BookItemDto(

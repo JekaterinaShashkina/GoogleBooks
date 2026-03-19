@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.googlebooksapi.ui.screens.BooksScreen
 import com.example.googlebooksapi.ui.theme.GoogleBooksAPITheme
 import com.example.googlebooksapi.viewmodel.BooksViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,10 +40,15 @@ fun BooksRoute(
     viewModel: BooksViewModel = hiltViewModel()
 ) {
     val books by viewModel.books.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val error by viewModel.error.collectAsState()
+    val totalItems by viewModel.totalItems.collectAsState()
 
-    LazyColumn {
-        items(books) { book ->
-            Text(book.title)
-        }
-    }
+    BooksScreen(
+        books = books,
+        isLoading = isLoading,
+        error = error,
+        totalItems = totalItems,
+        onSearch = { query -> viewModel.searchBooks(query) }
+    )
 }
