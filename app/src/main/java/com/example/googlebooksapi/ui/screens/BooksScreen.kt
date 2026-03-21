@@ -34,7 +34,8 @@ fun BooksScreen(
     error: String?,
     totalItems: Int,
     onSearch: (String) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onBookClick: (Book) -> Unit
 ) {
     var query by remember { mutableStateOf("") }
 
@@ -103,7 +104,10 @@ fun BooksScreen(
                         contentPadding = PaddingValues(bottom = 16.dp)
                     ) {
                         items(books) { book ->
-                            BookCard(book = book)
+                            BookCard(
+                                book = book,
+                                onClick = { onBookClick(book) }
+                            )
                         }
 
                     }

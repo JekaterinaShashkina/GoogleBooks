@@ -17,6 +17,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.rememberNavController
+import com.example.googlebooksapi.domain.model.Book
+import com.example.googlebooksapi.ui.navigation.AppNavHost
 import com.example.googlebooksapi.ui.screens.BooksScreen
 import com.example.googlebooksapi.ui.theme.GoogleBooksAPITheme
 import com.example.googlebooksapi.viewmodel.BooksViewModel
@@ -29,7 +32,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MaterialTheme {
-                BooksRoute()
+                val navController = rememberNavController()
+                AppNavHost(navController = navController)
             }
         }
     }
@@ -37,6 +41,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BooksRoute(
+    onBookClick: (Book) -> Unit,
     viewModel: BooksViewModel = hiltViewModel()
 ) {
     val books by viewModel.books.collectAsState()
@@ -49,6 +54,7 @@ fun BooksRoute(
         isLoading = isLoading,
         error = error,
         totalItems = totalItems,
-        onSearch = { query -> viewModel.searchBooks(query) }
+        onSearch = { query -> viewModel.searchBooks(query) },
+        onBookClick = onBookClick
     )
 }

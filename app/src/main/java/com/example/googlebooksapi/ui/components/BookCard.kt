@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.googlebooksapi.domain.model.Book
-import org.w3c.dom.Text
 
 @Composable
 fun BookCard(
