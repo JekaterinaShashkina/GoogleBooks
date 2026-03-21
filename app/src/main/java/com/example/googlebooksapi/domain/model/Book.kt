@@ -12,5 +12,6 @@ data class Book(
     val description: String,
     val pageCount: Int,
     val smallThumbnail: String,
-    val thumbnail: String
+    val thumbnail: String,
+    val searchQuery: String
 ) : Parcelable

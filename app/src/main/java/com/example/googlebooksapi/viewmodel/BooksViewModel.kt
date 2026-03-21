@@ -28,10 +28,19 @@ class BooksViewModel @Inject constructor(
     private val _totalItems = MutableStateFlow(0)
     val totalItems: StateFlow<Int> = _totalItems.asStateFlow()
 
+    private val _recentQueries = MutableStateFlow<List<String>>(emptyList())
+    val recentQueries = _recentQueries.asStateFlow()
+
     init {
-        searchBooks("kotlin")
+//        searchBooks("kotlin")
+        loadRecentQueries()
     }
 
+    fun loadRecentQueries() {
+        viewModelScope.launch {
+            _recentQueries.value = booksRepository.getLastFiveQueries()
+        }
+    }
     fun searchBooks(query: String) {
         viewModelScope.launch {
             _isLoading.value = true
@@ -40,6 +49,7 @@ class BooksViewModel @Inject constructor(
                 val result = booksRepository.searchBooks(query)
                 _books.value = result.books
                 _totalItems.value = result.totalItems
+                _recentQueries.value = booksRepository.getLastFiveQueries()
             } catch (e: Exception) {
                 _error.value = e.message ?: "Unknown error"
             } finally {

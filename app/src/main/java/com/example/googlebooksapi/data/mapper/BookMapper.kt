@@ -19,7 +19,8 @@ fun BooksResponseDto.BookItemDto.toDomain(): Book {
             ?.replace("http://", "https://")
             ?: info?.imageLinks?.thumbnail
                 ?.replace("http://", "https://")
-            ?: ""
+            ?: "",
+        searchQuery = ""
     )
 }
 
@@ -32,7 +33,8 @@ fun BookEntity.toDomain(): Book {
         description = description,
         pageCount = pageCount,
         thumbnail = thumbnail,
-        smallThumbnail = smallThumbnail
+        smallThumbnail = smallThumbnail,
+        searchQuery = searchQuery
     )
 }
 
@@ -45,7 +47,8 @@ fun Book.toEntity(searchQuery: String): BookEntity {
         description = description,
         pageCount = pageCount,
         thumbnail = thumbnail,
-        searchQuery = searchQuery,
-        smallThumbnail = smallThumbnail
+        smallThumbnail = smallThumbnail,
+        searchQuery = searchQuery
+
     )
 }

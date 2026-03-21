@@ -48,6 +48,7 @@ fun BooksRoute(
     val isLoading by viewModel.isLoading.collectAsState()
     val error by viewModel.error.collectAsState()
     val totalItems by viewModel.totalItems.collectAsState()
+    val recentQueries by viewModel.recentQueries.collectAsState()
 
     BooksScreen(
         books = books,
@@ -55,6 +56,7 @@ fun BooksRoute(
         error = error,
         totalItems = totalItems,
         onSearch = { query -> viewModel.searchBooks(query) },
-        onBookClick = onBookClick
+        onBookClick = onBookClick,
+        recentQueries = recentQueries
     )
 }
