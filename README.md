@@ -3,6 +3,7 @@
 Android rakendus raamatute otsimiseks, kasutades Google Books API-t.  
 Rakendus on loodud MVVM arhitektuuri, Retrofiti ja Roomi abil.
 
+
 ## 🚀 Funktsionaalsus
 
 - 🔍 Raamatute otsimine märksõna järgi
@@ -13,6 +14,7 @@ Rakendus on loodud MVVM arhitektuuri, Retrofiti ja Roomi abil.
 - 🕘 Viimased otsingud (5 viimast päringut)
 - 🎯 Kiire otsingu kordamine recent queries kaudu
 
+
 ## 🏗 Arhitektuur
 
 Rakendus on üles ehitatud **MVVM (Model-View-ViewModel)** põhimõttel:
@@ -22,7 +24,7 @@ Rakendus on üles ehitatud **MVVM (Model-View-ViewModel)** põhimõttel:
 - **Repository** — andmeallikas (API + Room)
 - **Data layer** — Retrofit + Room
 
----
+
 
 ## 🧰 Kasutatud tehnoloogiad
 
@@ -33,6 +35,7 @@ Rakendus on üles ehitatud **MVVM (Model-View-ViewModel)** põhimõttel:
 - Room (lokaalne andmebaas)
 - Hilt (Dependency Injection)
 - Coroutines + StateFlow
+
 
 ## 🌐 API
 
@@ -50,11 +53,13 @@ Kasutatakse Google Books API-t:
 ### Offline:
 - andmed loetakse lokaalsest andmebaasist
 
+
 ## 🔄 Otsinguajalugu
 
 - salvestatakse viimased 5 otsingut
 - kuvatakse kasutajaliideses
 - võimalik klikiga otsingut korrata
+
 
 ## 📱 Kasutajaliides (UI)
 
@@ -63,6 +68,7 @@ Kasutatakse Google Books API-t:
 - raamatu kaardid
 - detailvaade
 - recent searches (chips kujul)
+
 
 ## 📦 Projekti struktuur
 ```
