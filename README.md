@@ -90,11 +90,27 @@ ui/
 
 viewmodel/
 ```
+
 ## 🧪 Kuidas käivitada
 
-1. Ava projekt Android Studios
-2. Käivita emulaatoris või seadmes
-3. Sisesta otsingusõna
+1. Klooni projekt GitHubist või ava see Android Studios
+
+2. Ava projekt Android Studios
+
+3. Oota, kuni Gradle sync lõppeb
+
+4. Käivita emulaator või ühenda Android-seade
+
+5. Vajuta **Run ▶️**
+
+6. Sisesta otsingusõna (nt: *kotlin*, *android*, *python*)
+
+### 📌 Märkused
+
+- Internetiühendus on vajalik esmakordseks andmete laadimiseks
+- Kui andmed on juba laetud, töötab rakendus ka ilma internetita (Room cache)
+
+- Kui tekib Room andmebaasi viga, kustuta rakendus emulaatorist ja käivita uuesti
 
 ## 👩‍💻 Autor
 
