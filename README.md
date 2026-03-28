@@ -108,13 +108,14 @@ viewmodel/
 ##  📸 Screenshots and video
 
 ### Main Screen
-![Main](screenshots/mainScreen.jpg)
 
+<img src="screenshots/mainScreen.jpg" width="300" alt="Main Screen">
 ### Search Book
-![Search](screenshots/searchBook.jpg)
 
+<img src="screenshots/searchBook.jpg" width="300" alt="Search Book">
 ### Book Detail
-![Detail](screenshots/detailScreen.jpg)
+
+<img src="screenshots/detailScreen.jpg" width="300" alt="Book Detail">
 
 ### 🎥 Demo Video
 [Vaata rakenduse demo](https://youtube.com/shorts/KT3eS2Ox0SA)
