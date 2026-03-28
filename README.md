@@ -110,9 +110,11 @@ viewmodel/
 ### Main Screen
 
 <img src="screenshots/mainScreen.jpg" width="300" alt="Main Screen">
-### Search Book
+
+### Search Results
 
 <img src="screenshots/searchBook.jpg" width="300" alt="Search Book">
+
 ### Book Detail
 
 <img src="screenshots/detailScreen.jpg" width="300" alt="Book Detail">
