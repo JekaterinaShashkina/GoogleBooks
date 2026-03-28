@@ -1,5 +1,6 @@
 package com.example.googlebooksapi.domain.repository
 
+import android.util.Log
 import com.example.googlebooksapi.data.local.BookDao
 import com.example.googlebooksapi.data.mapper.toDomain
 import com.example.googlebooksapi.data.mapper.toEntity
@@ -18,6 +19,10 @@ class BooksRepositoryImpl @Inject constructor(
         override suspend fun searchBooks(query: String): BookSearchResult {
             return try {
                 val response = api.searchBooks(query)
+
+                Log.d("BooksRepo", "QUERY = $query")
+                Log.d("BooksRepo", "API RESPONSE ITEMS = ${response.items?.size}")
+
                 val books: List<Book> = response.items?.map { it.toDomain() } ?: emptyList()
 
                 dao.clearBooks(query)
@@ -29,6 +34,7 @@ class BooksRepositoryImpl @Inject constructor(
                     books = books
                 )
             } catch (e: Exception) {
+                Log.e("BooksRepo", "ERROR = ${e.message}", e)
                 val cachedBooks = dao.getAllBooks(query).map {it.toDomain()}
 
                 BookSearchResult(

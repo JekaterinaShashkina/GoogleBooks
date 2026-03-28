@@ -32,7 +32,7 @@ class BooksViewModel @Inject constructor(
     val recentQueries = _recentQueries.asStateFlow()
 
     init {
-//        searchBooks("kotlin")
+        searchBooks("kotlin")
         loadRecentQueries()
     }
 

@@ -105,7 +105,22 @@ viewmodel/
 
 6. Sisesta otsingusõna (nt: *kotlin*, *android*, *python*)
 
-### 📌 Märkused
+##  📸 Screenshots and video
+
+### Main Screen
+![Main](screenshots/mainscreen.png)
+
+### Search Book
+![Search](screenshots/searchbook.png)
+
+### Book Detail
+![Detail](screenshots/bookdetail.png)
+
+### 🎥 Demo Video
+[Vaata rakenduse demo](https://youtube.com/shorts/KT3eS2Ox0SA)
+
+
+## 📌 Märkused
 
 - Internetiühendus on vajalik esmakordseks andmete laadimiseks
 - Kui andmed on juba laetud, töötab rakendus ka ilma internetita (Room cache)
